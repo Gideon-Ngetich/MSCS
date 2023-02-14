@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gruppo";
+  font-weight: 300;
+}
+body {
+  background-color: rgba(114, 113, 113, 0.2);
+}
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: rgb(35, 65, 131);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: relative;
+}
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav .logo i {
+  font-size: 20px;
+  margin: 0 5px 0 0;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+.list-border {
+  border-bottom: 4px solid #000;
+}
+input[type="checkbox"] {
+  display: none;
+}
+.header {
+  width: 100%;
+  height: 40vh;
+}
+.header img {
+  width: 100%;
+  height: 400px;
+}
+.header h2 {
+  position: relative;
+  top: -140%;
+  font-size: 45px;
+  font-weight: 800;
+  /* border-left: 5px solid rgb(0, 255, 55); */
+  color: rgb(236, 240, 6);
+  margin: 10px 40px 10px 40px;
+  padding-left: 5px;
+}
+.header h3 {
+  position: relative;
+  top: -140%;
+  font-size: 25px;
+  font-weight: 800;
+  /* border-left: 5px solid rgb(0, 255, 55); */
+  color: rgb(102, 240, 10);
+  margin: 10px 40px 10px 40px;
+  padding-left: 5px;
+  text-decoration: none;
+}
+.contacts {
+  position: relative;
+  top: -50%;
+  left: 17%;
+  display: flex;
+  gap: 30px;
+  width: 70%;
+  margin-bottom: 100px;
+}
+.phone,
+.email {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.phone i,
+.email i {
+  font-size: 60px;
+  margin: 20px;
+}
+.phone p,
+.email p {
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  margin: 30px;
+}
+.phone h3,
+.email h3 {
+  font-size: 25px;
+  color: #000;
+}
+@media (min-width: 1200px) {
+  .header h2 {
+    position: relative;
+    top: -350px;
+  }
+  .header h3 {
+    position: relative;
+    top: -350px;
+  }
+  .phone i,
+  .email i {
+    font-size: 40px;
+    margin: 10px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 992px) {
+  .phone h3,
+  .email h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 20px 0 20px;
+  }
+  nav .logo {
+    font-size: 25px;
+  }
+}
+@media (max-width: 992px) and (min-width: 768px) {
+  .header h2,
+  .header h3 {
+    top: -300px;
+  }
+  .contacts {
+    position: relative;
+    top: 100px;
+  }
+}
+@media (max-width: 768px) and (min-width: 600px) {
+  .contacts {
+    width: 90%;
+    margin: 20px;
+    left: 7%;
+  }
+  .phone,
+  .email {
+    width: 300px;
+    height: 330px;
+  }
+  .phone h3,
+  .email h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) and (min-width: 400px) {
+  .header h2{
+    top: -100%;
+  }
+  .header h3{
+    top: -100%;
+  }
+  .contacts{
+    left: 10px;
+  }
+  .phone i, .email i{
+    font-size: 35px;
+  }
+}
+@media (max-width: 920px) {
+  nav {
+    z-index: 1;
+  }
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 75px;
+    left: -100%;
+    background: #111;
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+    /* top: 15%; */
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    margin-left: 0;
+    padding-left: 3px;
+    height: 50px;
+  }
+  nav .logo {
+    font-size: 17px;
+    margin-left: 10px;
+  }
+  nav .menu-btn i {
+    position: absolute;
+    left: 90%;
+    top: 15px;
+  }
+  nav ul{
+    margin-top: -30px;
+    height: 300px;
+  }
+  .header h2{
+    font-size: 35px;
+  }
+  .contacts{
+    flex-direction: column;
+  }
+  .phone , .email{
+    width: 390px;
+  }
+}
